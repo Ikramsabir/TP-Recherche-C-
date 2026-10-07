@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -11,18 +12,22 @@ bool rechercher(string nomFichier, string mot)
     if (!fichier)
         return false;
 
+    vector<string> lignes;
     string ligne;
 
     while (getline(fichier, ligne))
     {
-        if (ligne.find(mot) != string::npos)
-        {
-            fichier.close();
-            return true;
-        }
+        lignes.push_back(ligne);
     }
 
     fichier.close();
+
+    for (string ligne : lignes)
+    {
+        if (ligne.find(mot) != string::npos)
+            return true;
+    }
+
     return false;
 }
 
