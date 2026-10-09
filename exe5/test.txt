@@ -1,0 +1,11 @@
+text
+bonjour
+bonsoir
+bonbon
+maison
+raison
+saison
+poisson
+passion
+ordinateur
+programmation
